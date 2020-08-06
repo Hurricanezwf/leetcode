@@ -1,0 +1,20 @@
+
+信息整理:
+   '.'可以表示任意a-z的小写字符
+   '*'可以表示必须包含>=0个前一个字符, 对方可以没有, 但不能不一样
+
+ 
+
+注意各种边界:
+     >  string is ""           regrex is  ""                  true
+     >  string is ""           regrex is  "."                 false
+     >  string is ""           regrex is  "*"                 true
+     >  string is ""           regrex is  "a"                 false
+     >  string is "ab"         regrex is  ""                  false
+     >  string is "a"          regrex is  "a*"                true
+     >  string is "a"          regrex is  "a*."               true
+     >  string is "abc"        regrex is  "a."                false
+     >  string is "azc"        regrex is  "a.*"               true
+     >  string is "azc"        regrex is  "az*."              true
+     >  string is "az"         regrex is  "az*."              true
+     >  string is "azzz"       regrex is  "az*"               true
